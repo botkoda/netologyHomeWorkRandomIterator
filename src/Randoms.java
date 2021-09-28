@@ -9,7 +9,7 @@ public class Randoms implements Iterable<Integer> {
 
     public Randoms(int min, int max) {
         random = new Random();
-        r  =  min +  random.nextInt(max - min + 1);
+        r = min + random.nextInt(max - min + 1);
     }
 
     @Override
@@ -18,14 +18,12 @@ public class Randoms implements Iterable<Integer> {
 
             @Override
             public boolean hasNext() {
-
-               if( r<=100) return true;
-                return false;
+                return true;
             }
 
             @Override
             public Integer next() {
-                return  r++;
+                return r++;
             }
         };
     }
