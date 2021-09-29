@@ -5,10 +5,12 @@ import java.util.Random;
 
 public class Randoms implements Iterable<Integer> {
     protected Random random;
-    int r;
+    protected int r,min,max;
 
-    public Randoms(int min, int max) {
+    public Randoms( int min, int max) {
         random = new Random();
+        this.min=min;
+        this.max=max;
         r = min + random.nextInt(max - min + 1);
     }
 
@@ -23,7 +25,7 @@ public class Randoms implements Iterable<Integer> {
 
             @Override
             public Integer next() {
-                return r++;
+                return min + random.nextInt(max - min + 1);
             }
         };
     }
